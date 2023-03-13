@@ -36,7 +36,9 @@ console.log(dataMail)
 
 //dichiaro le costanti
 const btnVerificaEl = document.getElementById('verifica')
-const esitoVerifica = document.getElementsByid('esito')
+const esitoVerifica = document.getElementsByid('esito_verifica')
+
+esitoVerifica.innerHtml = 'frizz'
 
 
 // assegno una funzione al tasto verifica
@@ -52,13 +54,16 @@ btnVerificaEl.addEventListener('click', function () {
         // stampo gli array
         // console.log(dataMail[i])
         if (dataMail[i] == userEmail) {
-            esitoVerifica.inner
+            esitoVerifica.innerHtml = 'Puoi accedere'
         } else {
             
         }
 
     }
 })
+
+
+
 
 
 
