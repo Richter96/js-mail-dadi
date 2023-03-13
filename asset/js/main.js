@@ -21,6 +21,9 @@ Buon divertimento e confermate lettura come al solito :baby-yoda: */
 
 //chiediamo con prompt/input mail all'utente
 
+// dichiaro le costanti
+
+
 //creiamo un array con alcune mail.
 let dataMail = [
     "ciao",
@@ -31,19 +34,32 @@ let dataMail = [
 ]
 console.log(dataMail)
 
-//chiedo l'indirizzo mail dell'utente
-const userEmail = prompt('inserisci la tua mail')
-console.log(userEmail, dataMail)
+//dichiaro le costanti
+const btnVerificaEl = document.getElementById('verifica')
+const esito_verifica = document.getElementsByClassName('esito_verifica')
 
-// creo un loop che conti gli array
-for (let i = 0; i < dataMail.length; i++) {
-// stampo gli array
-// console.log(dataMail[i])
-if (dataMail[i] == userEmail) {
-    console.log('puoi accedere!!!')
-    
-} else if (dataMail[i] != userEmail) {
-    console.log('non puoi accedere')
-}
-}
+
+// assegno una funzione al tasto verifica
+btnVerificaEl.addEventListener('click', function () {
+//prendo l'indirizzo mail dell'utente
+    const userEmail = document.getElementById('user_email').value
+    console.log(userEmail)
+
+    // creo un loop che conti gli array
+    for (let i = 0; i < dataMail.length; i++) {
+        // stampo gli array
+        // console.log(dataMail[i])
+        if (dataMail[i] == userEmail) {
+
+        } else {
+            console.log('non puoi accedere')
+        }
+        
+    }
+
+})
+
+
+
+
 
