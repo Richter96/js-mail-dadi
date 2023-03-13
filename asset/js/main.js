@@ -9,10 +9,11 @@ Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in
 //dichiaro le costanti che mi servono.
 const btnVerificaEl = document.getElementById('verifica')
 const esitoVerifica = document.getElementById('esito_verifica')
+esitoVerifica.classList.add('text-center', 'w-auto')
 
 //creiamo un array con alcune mail.
 const dataMail = [
-    "ciao",
+    "ciao@gmail.com",
     "casa@gmail.com",
     "auto@gmail.com",
     "banca@gmail.com",
@@ -22,34 +23,44 @@ const dataMail = [
 // assegno una funzione al bottone
 btnVerificaEl.addEventListener('click', function () {
 
-//prendo l'indirizzo mail dell'utente
+    //prendo l'indirizzo mail dell'utente
     const userEmail = document.getElementById('user_email').value;
 
-// stampo l'email per controllo
-// console.log(userEmail);
+    // stampo l'email per controllo
+    // console.log(userEmail);
 
-// dichiaro una variabile (è un concetto di ragionamento) falsa che cambia nel momento si verifa una condizione
+    // dichiaro una variabile (è un concetto di ragionamento) falsa che cambia nel momento si verifa una condizione
     let hasAcces = false
 
-// creo un loop che conti gli array
+    // creo un loop che conti gli array
     for (let i = 0; i < dataMail.length; i++) {
 
-// stampo gli array per un controllo
-// console.log`(email inserita: ${userEmail} email loop${dataMail[i]})`
+        // stampo gli array per un controllo
+        // console.log`(email inserita: ${userEmail} email loop${dataMail[i]})`
 
-//creo un modo per bloccare il loop e rimuovere la condizione if fuori dal loop
+        //creo un modo per bloccare il loop e rimuovere la condizione if fuori dal loop
         if (dataMail[i] === userEmail) {
-           hasAcces = true
+            hasAcces = true
         }
     }
 
-// scrivo solo hasAcces xk si da scontato che sia true
+    // scrivo solo hasAcces xk si da scontato che sia true
     if (hasAcces) {
-        esitoVerifica.innerHTML = 'puoi accedere'
+        esitoVerifica.innerHTML = 'Accesso consentito ;)'
+        esitoVerifica.style.backgroundColor = 'palegreen'
+        esitoVerifica.classList.add('text-white')
+
+
     } else {
-        esitoVerifica.innerHTML = 'non puoi accedere'
+        esitoVerifica.innerHTML = 'Accesso negato!!!'
+        esitoVerifica.style.backgroundColor = 'orange'
+        esitoVerifica.classList.add('text-danger')
+
+
     }
 })
+
+
 
 
 /* Gioco dei dadi
