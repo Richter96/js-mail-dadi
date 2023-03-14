@@ -75,26 +75,44 @@ si ma noi cosa vogliamo fare?
 torniamo a scrivere in italiano
 proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 Buon divertimento e confermate lettura come al solito :baby-yoda:
+//strumenti
+
+- const/let
+- if...else
+- operators >
+- math
  */
 
+
 // generiamo dei numeri random da 1 a 6 per il giocatore e poi per il pc
-// generiamo un numero a caso 
-// usia un if per capire se due condizioni sono uguali.
-
-
-const pcNumRandom = Math.floor(Math.random() * 6) + 1
+const pcNumRandom = Math.floor(Math.random() * 10) + 1
 console.log(`numermi random pc: ${pcNumRandom}`)
 
 
-const userNumRandom = Math.floor(Math.random() * 6) + 1
+const userNumRandom = Math.floor(Math.random() * 10) + 1
 console.log(`numermi random user: ${userNumRandom}`)
 
+let winner;
+let pcAttempt = 0;
+let userAttempt = 0;
+
+
+// usia un if per capire se due condizioni sono uguali.
 
 if (pcNumRandom > userNumRandom) {
-    console.log('Pc ha vinto!!!')
+    winner = 'Pc ha vinto!!!'
+    pcAttempt++
+} else if (pcNumRandom < userNumRandom){
+    winner = 'user ha vinto!!!'
+    userAttempt++
 } else {
-    console.log('User ha vinto');
+    winner= 'none'
 }
+
+console.log(`the winner is ${winner}`)
+console.log(`pc wins ${pcAttempt}`)
+console.log(`user wins ${userAttempt}`)
+
 
 
 
